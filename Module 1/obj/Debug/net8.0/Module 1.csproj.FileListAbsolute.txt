@@ -1,7 +1,7 @@
 D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.exe
+D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.dll
 D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.deps.json
 D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.runtimeconfig.json
-D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.dll
 D:\Quokka Labs\Module 1\Module 1\bin\Debug\net8.0\Module 1.pdb
 D:\Quokka Labs\Module 1\Module 1\obj\Debug\net8.0\Module 1.GeneratedMSBuildEditorConfig.editorconfig
 D:\Quokka Labs\Module 1\Module 1\obj\Debug\net8.0\Module 1.AssemblyInfoInputs.cache

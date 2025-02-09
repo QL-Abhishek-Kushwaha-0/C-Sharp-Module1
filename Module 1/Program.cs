@@ -18,7 +18,10 @@ namespace Module_1
             bool isFun = true;
             string name = "Osama Bin Laden";
 
-            Console.WriteLine($"{age}, {decNum}, {doubleNum}, {ch}, {isFun}, {name}");
+            string str1 = "Abhishek";
+            string str2 = "Abhishek";
+
+            Console.WriteLine($"{age}, {decNum}, {doubleNum}, {ch}, {isFun}, {name}, {str1 == str2}, {str1.Equals(str2)}");
 
             // Constants -> Containers to contain values which cannot be reassigned
             //              const keyword -> used to declare a variable as constant (i.e. it's value cannot be reassigned
@@ -177,6 +180,65 @@ namespace Module_1
             } else
             {
                 Console.WriteLine($"{thirdNum} {"is the largest one!!"}");
+            }
+
+            // ---------------> TASK : 4 <------------------
+
+            // Q.1 :- Full Name Generator – Take first name and last name as input and display the full name using concatenation (+) and string interpolation ($"").
+
+            Console.Write("Enter your first name : ");
+            string fName = Console.ReadLine() ?? "";
+            Console.Write("Enter your last name : ");
+            string lName = Console.ReadLine() ?? "";
+            Console.WriteLine("Using Concatenation : " + fName + " " + lName);
+            Console.WriteLine($"{"Using String Interpolation :"} {fName} {lName}");
+
+            // Q.2 :- Character Extractor – Take a string as input and print the first, last, and middle character (if the length is odd) using indexing.
+            Console.Write("Enter the string : ");
+            string inputString = Console.ReadLine() ?? "";
+            Console.WriteLine($"{"First Character : "}{inputString[0]}");
+            Console.WriteLine($"{"Last Character : "}{inputString[inputString.Length - 1]}");
+            Console.WriteLine($"{"Middle Character : "}{inputString[inputString.Length / 2]}");
+
+            // Q.3 :- Escape Sequence Formatter – Print a multi-line formatted string using special characters (\n, \t, \", \\) to display a structured output.
+            Console.WriteLine("This line will terminate using New Line Character\n\tThis Line is having some gap in beginning due to the tab space.\nNow, for Inverted commas -> \"We Use Backslash\"\nAnd finally the backslash can be printed using double backslash i.e. \\");
+
+            // Q.4 :- Even or Odd Checker – Take a number as input and use a boolean expression to check if it is even (true) or odd (false).
+            Console.Write("Enter the number to be checked : ");
+            int numToCheck = Convert.ToInt32(Console.ReadLine());
+            if(numToCheck % 2 == 0)
+            {
+                Console.WriteLine("True, the number is Even!!");
+            } else
+            {
+                Console.WriteLine("False, the number is Odd");
+            }
+
+            // Q.5 :- Login Authentication – Take a username and password as input, compare them with predefined values, and return true if they match, otherwise false.
+            string definedUsername = "Mr_Abhishek001";
+            string definedPassword = "Password";
+
+            Console.Write("Enter your Username : ");
+            string userName = Console.ReadLine() ?? "";
+            Console.Write("Enter your password : ");
+            string password = Console.ReadLine() ?? "";
+
+            if (userName.Equals(definedUsername) && password.Equals(definedPassword)) {
+                Console.WriteLine("True, Your credential matches with defined ones!!");
+            } else
+            {
+                Console.WriteLine("False, Wronog Credentials.");
+            }
+
+            // Q.6 :- Leap Year Validator – Take a year as input and check if it is a leap year using boolean conditions (true for leap year, false otherwise).
+            Console.Write("Enter the year : ");
+            int year = Convert.ToInt32(Console.ReadLine());
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            {
+                Console.WriteLine("True, This is a leap year");
+            } else
+            {
+                Console.WriteLine("False, This is not a leap year");
             }
         }
     }
