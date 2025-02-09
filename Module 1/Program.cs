@@ -47,6 +47,8 @@ namespace Module_1
             char grade = 'A';
             long rollNo = 23645978;
 
+            Console.WriteLine($"{a}, {b}, {c}, {countryName}, {empAge}, {studentAge}, {studentName}, {weight}, {isIntelligent}, {grade}, {rollNo}");
+
             // Q.3 :- Create programs for showing Type casting (Implicit & Explicit)
 
             // 1. Implicit Type Casting -> Automatically converts smaller datatype to larger datatype.
@@ -80,13 +82,101 @@ namespace Module_1
 
             string numString = "12345";
             string numString2 = "123abc";  // It will give error when converted to int as it     is not in the correct format
-            Console.WriteLine($"{Convert.ToInt32(numString)}, {int.Parse(numString)}");
+            Console.WriteLine($"{Convert.ToInt32(numString)}, {Convert.ToDouble(numString)}, {int.Parse(numString)}");
             if(int.TryParse(numString2, out var res))
             {
                 Console.WriteLine(res);
             } else
             {
                 Console.WriteLine("The String is not in required format");
+            }
+
+
+            // ------------------> TASK 3 <-------------------
+
+            // Q.1 :- Basic Calculator – Take two numbers as input and perform addition, subtraction, multiplication, division, and modulus operations.
+
+            Console.Write("Enter the first Number : ");
+            double number1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the second Number : ");
+            double number2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the operation number you want to perform : \n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Modulus");
+            int op = Convert.ToInt32(Console.ReadLine());
+            switch (op)
+            {
+                case 1:
+                    Console.WriteLine($"{"Addition : "} {number1 + number2}");
+                    break;
+                case 2:
+                    Console.WriteLine($"{"Subtraction : "} {number1 - number2}");
+                    break;
+                case 3:
+                    Console.WriteLine($"{"Multiplication : "} {number1 * number2}");
+                    break;
+                case 4:
+                    if (number2 != 0)
+                    {
+                        Console.WriteLine($"{"Division : "} {number1 / number2}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid operation");
+                    }
+                    break;
+                case 5:
+                    if (number2 != 0)
+                    {
+                        Console.WriteLine($"{"Remainder : "} {number1 % number2}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Operation");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Enter valid operation number!!");
+                    break;
+            }
+
+            //// Q.2 -> Voting Eligibility Checker – Ask the user for their age and citizenship status (Y/N) and determine if they are eligible to vote (Age ≥ 18 and must be a citizen).
+
+            Console.Write("Enter your age : ");
+            int ageOfVoter = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Are you a Citizen of this country (Y/N) : ");
+            char citizenStatus = Convert.ToChar(Console.ReadLine());
+            if (ageOfVoter >= 18 && (citizenStatus == 'Y' || citizenStatus == 'y'))
+            {
+                Console.WriteLine("Yes, You are eligible to cast your vote!!!");
+            }
+            else
+            {
+                Console.WriteLine("You are not eligible to cast your vote");
+            }
+
+            // Q.3 -> Find the Largest Number – Take three numbers as input and determine the largest using comparison operators.
+            Console.Write("Enter first number : ");
+            int firstNum = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter second number : ");
+            int secondNum = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter third number : ");
+            int thirdNum = Convert.ToInt32(Console.ReadLine());
+
+            if (firstNum >= secondNum)
+            {
+                if(firstNum >= thirdNum)
+                {
+                    Console.WriteLine($"{firstNum} {"is the largest one!!"}");
+                } else
+                {
+                    Console.WriteLine($"{thirdNum} {"is the largest one!!"}");
+                }
+            }
+            else if (secondNum >= thirdNum)
+            {
+                Console.WriteLine($"{secondNum} {"is the largest one!!"}");
+            } else
+            {
+                Console.WriteLine($"{thirdNum} {"is the largest one!!"}");
             }
         }
     }
