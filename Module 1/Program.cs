@@ -240,6 +240,157 @@ namespace Module_1
             {
                 Console.WriteLine("False, This is not a leap year");
             }
+
+            // --------------------> TASK 5 <--------------------
+
+            // Q.1 (a) : Grade Calculator – Take a student's score as input and determine the grade (A, B, C, D, or F) using an if-else statement.
+            Console.Write("Enter the marks of student out of 100 : ");
+            int studentMarks = Convert.ToInt32(Console.ReadLine());
+            if(studentMarks >= 90)
+            {
+                Console.WriteLine("Grade : A");
+            } else if(studentMarks >= 80)
+            {
+                Console.WriteLine("Grade : B");
+            } else if (studentMarks >= 70)
+            {
+                Console.WriteLine("Grade : C");
+            } else if (studentMarks >= 60)
+            {
+                Console.WriteLine("Grade : D");
+            } else if(studentMarks >= 40)
+            {
+                Console.WriteLine("Grade : E");
+            }
+            else
+            {
+                Console.WriteLine("Grade : F");
+            }
+
+            // Q.1 (b) :- Day of the Week – Take a number (1-7) as input and display the corresponding day of the week using a switch statement.
+            Console.Write("Enter a Number between 1 - 7");
+            int dayNum = Convert.ToInt32(Console.ReadLine());
+            switch(dayNum)
+            {
+                case 1:
+                    Console.WriteLine("Monday");
+                    break;
+                case 2:
+                    Console.WriteLine("Tuesday");
+                    break;
+                case 3:
+                    Console.WriteLine("Wednesday");
+                    break;
+                case 4:
+                    Console.WriteLine("Thursday");
+                    break;
+                case 5:
+                    Console.WriteLine("Friday");
+                    break;
+                case 6:
+                    Console.WriteLine("Saturday");
+                    break;
+                case 7:
+                    Console.WriteLine("Sunday");
+                    break;
+                default:
+                    Console.WriteLine("Wrong input!!!");
+                    break;
+            }
+
+            // Q.1 (c) :- Even or Odd (Switch Expression) – Use a switch expression to check if a number is even or odd.
+            Console.Write("Enter the number to be checked : ");
+            int numCheck = Convert.ToInt32(Console.ReadLine());
+            switch (numCheck % 2) {
+                case 0:
+                    Console.WriteLine($"{numCheck} {"is Even Number"}");
+                        break;
+                case 1:
+                    Console.WriteLine($"{numCheck} {"is Odd Number"}");
+                    break;
+            }
+
+            // Q.2 (a) :- Multiplication Table – Take a number as input and print its multiplication table using a for loop.
+            Console.Write("Enter the number for which table needs to be generated : ");
+            int tableNum = Convert.ToInt32(Console.ReadLine());
+            for(int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(tableNum * i);
+            }
+
+            // Q.2 (b) :- Sum of Array Elements – Given an array of numbers, use a foreach loop to calculate and display the sum.
+            int[] nums = { 23, 34, 46, 57, 21 };
+            int sum = 0;
+            foreach (int num in nums)
+            {
+                sum += num;
+            }
+            Console.WriteLine("Sum of all elements in array Nums is : {0}", sum);
+
+            // Q.2 (c) :- Number Guessing Game – Generate a random number (1-100) and let the user guess it using a while loop until they get it right.
+            Random random = new Random();
+            int randomNum = random.Next(1, 101);
+            Console.WriteLine("Random Number : {0}", randomNum);
+            Console.Write("Guess the Number (1 - 100) : ");
+            int userGuess = Convert.ToInt32(Console.ReadLine());
+
+            while(true)
+            {
+                if(randomNum == userGuess)
+                {
+                    Console.WriteLine("You Win, You guessed it right!!");
+                    break;
+                }
+                Console.Write("Wrong Guess!! Guess again : ");
+                userGuess = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Q.3 (a) :- Find First Divisible Number – Use a for loop to find the first number divisible by both 3 and 5 in a given range. Use break to exit the loop when found.
+
+            Console.Write("Enter the start of the range : ");
+            int startRange = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the end of the range : ");
+            int endRange = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = startRange; i <= endRange; i++)
+            {
+                if ((i % 3 == 0) && (i % 5 == 0))
+                {
+                    Console.WriteLine("First Number divisible by both 3 and 5 is : {0}", i);
+                    break;
+                }
+            }
+
+            // Q.3 (b) :- Skip Even Numbers – Print numbers from 1 to 10 using a for loop but skip even numbers using continue.
+            Console.WriteLine("Numbers between 1 - 10 skipping Even Numbers : ");
+            for(int i = 1; i <= 10; i++)
+            {
+                if (i % 2 == 0) continue;
+                Console.WriteLine(i);
+            }
+
+            // Q.3 (c) :- User Login Attempts – Allow the user to enter a password with a maximum of 3 attempts using a while loop and break if successful.
+            int attempts = 0;
+            Console.Write("Enter the Password : ");
+            while (true)
+            {
+                string userPass = Console.ReadLine() ?? "";
+                if (userPass == definedPassword)
+                {
+                    Console.WriteLine("Correct Password!!");
+                    break;
+                }
+                else
+                {
+                    attempts++;
+                }
+                if (attempts == 3)
+                {
+                    Console.WriteLine("You have attempted 3 times. Try again after 15 minutes!!");
+                    break;
+                }
+                Console.Write("Wrong Password!! Try again : ");
+            }
         }
     }
 }
